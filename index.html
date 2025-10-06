@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pankaj Kumar | Graphic Designer & Video Editor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00bcd4;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    header p {
+      margin-top: 20px;
+      max-width: 600px;
+      font-size: 1rem;
+      color: #aaa;
+    }
+
+    nav {
+      background: rgba(20, 20, 20, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    .about {
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2.2rem;
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccc;
+    }
+
+    .portfolio {
+      background: #121212;
+    }
+
+    .portfolio h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #00bcd4;
+      margin-bottom: 40px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: #1b1b1b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 188, 212, 0.2);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: #0a0a0a;
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      color: #00bcd4;
+      text-decoration: none;
+      border: 1px solid #00bcd4;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s;
+    }
+
+    .contact a:hover {
+      background: #00bcd4;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Pankaj Kumar</h1>
+    <h2>Graphic Designer & Video Editor</h2>
+    <p>I’m a creative designer and editor who transforms ideas into stunning visuals and impactful motion. Passionate about design and storytelling, I bring imagination to life through both static and dynamic art.</p>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm a creative designer and editor with hands-on experience in design and video editing. My work blends artistry and technical skill to deliver eye-catching visuals and engaging video content. I love experimenting with color, motion, and layout to make every project unique and expressive.</p>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <h2>My Work</h2>
+    <div class="project-grid">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x200?text=Graphic+Design+Project" alt="Graphic Design Project">
+        <div class="project-content">
+          <h3>Graphic Design Project</h3>
+          <p>Creative poster and social media design showcasing color, typography, and branding skills.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x200?text=Video+Editing+Project" alt="Video Editing Project">
+        <div class="project-content">
+          <h3>Video Editing Project</h3>
+          <p>A dynamic edit featuring cinematic cuts, transitions, and motion graphics to tell a story visually.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Let's create something amazing together.</p>
+    <a href="mailto:yourname@email.com">✉️ Email Me</a>
+    <a href="https://linkedin.com/in/yourname" target="_blank">💼 LinkedIn</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Pankaj Kumar. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
