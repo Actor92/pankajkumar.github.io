@@ -4,295 +4,173 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pankaj Kumar | Graphic Designer & Video Editor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background: #0a0a0a;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
       color: #fff;
       overflow-x: hidden;
     }
 
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(10px);
+    header {
       display: flex;
-      justify-content: center;
-      padding: 15px 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
+    header h1 {
+      color: #00e5ff;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
     nav a {
-      color: #ccc;
+      color: #fff;
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: 500;
-      transition: 0.3s;
+      margin-left: 2rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #00e0ff;
-    }
-
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle at top, #111 0%, #000 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 0deg, #00bcd4, #0099ff, #0066ff, #00bcd4);
-      animation: rotate 10s linear infinite;
-      filter: blur(80px);
-      opacity: 0.4;
-    }
-
-    @keyframes rotate {
-      0% {transform: rotate(0);}
-      100% {transform: rotate(360deg);}
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #00e0ff;
-      font-weight: 700;
-      z-index: 2;
-      animation: fadeInDown 1s ease;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      color: #ccc;
-      margin-top: 10px;
-      z-index: 2;
-      animation: fadeInUp 1.5s ease;
-    }
-
-    header p {
-      margin-top: 20px;
-      color: #aaa;
-      max-width: 700px;
-      line-height: 1.7;
-      z-index: 2;
-      animation: fadeInUp 2s ease;
-    }
-
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+      color: #00e5ff;
     }
 
     section {
-      padding: 100px 8%;
+      padding: 5rem 2rem;
       text-align: center;
     }
 
-    h2.section-title {
-      font-size: 2.4rem;
-      color: #00e0ff;
-      margin-bottom: 50px;
-      position: relative;
+    h2 {
+      color: #00e5ff;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #00e5ff;
     }
 
-    .about p {
-      max-width: 750px;
-      margin: 0 auto;
-      color: #ccc;
-      line-height: 1.8;
-      animation: fadeIn 1.5s ease;
-    }
-
-    /* Slider */
-    .slider {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 224, 255, 0.25);
-    }
-
-    .slides {
+    /* --- Graphics Section --- */
+    .graphics-slider {
       display: flex;
-      transition: transform 1s ease-in-out;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      justify-content: center;
+      padding: 1rem;
     }
 
-    .slide {
-      min-width: 100%;
+    .graphics-slider img {
+      flex: 0 0 80%;
+      max-width: 1200px;
+      height: auto;
+      border-radius: 20px;
+      scroll-snap-align: center;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+      transition: transform 0.4s ease;
     }
 
-    .slide img, .slide iframe {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border: none;
-      border-radius: 12px;
+    .graphics-slider img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px rgba(0, 229, 255, 0.6);
     }
 
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.7);
-      color: #00e0ff;
-      border: none;
-      font-size: 24px;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: 0.3s;
+    /* --- Video Section --- */
+    .video-slider {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
-    .nav-btn:hover {
-      background: #00e0ff;
-      color: #000;
+    .video-slider iframe {
+      width: 380px;
+      height: 680px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+      transition: transform 0.4s ease;
     }
 
-    .nav-btn.left { left: 10px; }
-    .nav-btn.right { right: 10px; }
-
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 25px;
-      border: 1px solid #00e0ff;
-      border-radius: 30px;
-      text-decoration: none;
-      color: #00e0ff;
-      transition: 0.3s;
-    }
-
-    .contact a:hover {
-      background: #00e0ff;
-      color: #000;
+    .video-slider iframe:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0, 229, 255, 0.6);
     }
 
     footer {
+      background: #000;
       text-align: center;
-      padding: 40px 0;
-      background: #050505;
-      color: #888;
+      padding: 2rem;
+      color: #ccc;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+    footer a {
+      color: #00e5ff;
+      text-decoration: none;
     }
 
-    .fade {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 1s ease;
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    .fade.visible {
-      opacity: 1;
-      transform: translateY(0);
+    section {
+      animation: fadeInUp 1.2s ease;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#graphics">Graphics</a>
-    <a href="#videos">Videos</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <header>
     <h1>Pankaj Kumar</h1>
-    <h2>Creative Graphic Designer & Video Editor</h2>
-    <p>I design impactful visuals and craft cinematic edits that tell stories and inspire. With experience across design and editing, I bring imagination, precision, and modern aesthetics to every project I create.</p>
+    <nav>
+      <a href="#graphics">Graphics</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section id="about" class="about fade">
-    <h2 class="section-title">About Me</h2>
-    <p>As a passionate creative, I specialize in transforming ideas into visual stories. From graphic design to video editing, I merge artistic intuition with technical expertise to deliver content that connects, engages, and inspires audiences.</p>
+  <section id="about">
+    <h2>Graphic Designer & Video Editor</h2>
+    <p style="max-width:800px;margin:auto;font-size:1.2rem;color:#aaa;">
+      I’m a creative designer and editor with experience in crafting visually striking designs and compelling video edits. 
+      I bring ideas to life through impactful visuals that connect with audiences.
+    </p>
   </section>
 
-  <section id="graphics" class="fade">
-    <h2 class="section-title">Graphic Design Projects</h2>
-    <div class="slider" id="graphics-slider">
-      <div class="slides">
-        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=1O1tCCeBwlvgmKhlE30w63zhVbflnuU2u" alt="Design 1"></div>
-        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=14YCxwjnJHBG4f1_lxFtQ84wFDCBftknG" alt="Design 2"></div>
-        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=1rdjbuJtJ8tBos3u55Pqx7VVX8cFdPBJI" alt="Design 3"></div>
-      </div>
-      <button class="nav-btn left" onclick="moveSlide('graphics', -1)">&#10094;</button>
-      <button class="nav-btn right" onclick="moveSlide('graphics', 1)">&#10095;</button>
+  <section id="graphics">
+    <h2>Graphic Design Projects</h2>
+    <div class="graphics-slider">
+      <img src="https://live.staticflickr.com/65535/54188962810_987bc9630c_b.jpg" alt="Graphic 1">
+      <img src="https://live.staticflickr.com/65535/54189075913_85a16f49b5_b.jpg" alt="Graphic 2">
+      <img src="https://live.staticflickr.com/65535/54189075623_8d1d043787_b.jpg" alt="Graphic 3">
     </div>
   </section>
 
-  <section id="videos" class="fade">
-    <h2 class="section-title">Video Editing Projects</h2>
-    <div class="slider" id="videos-slider">
-      <div class="slides">
-        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1ss6ZYokfFVuTHTWxvy-A2986SZgW01ah"></iframe></div>
-        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1mQBSySsI4DruTQDIJXoLKO0si3ARbk8s"></iframe></div>
-        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1a3krMVb4d1fSkps2MUycEfLuu1Jj4Kyt"></iframe></div>
-      </div>
-      <button class="nav-btn left" onclick="moveSlide('videos', -1)">&#10094;</button>
-      <button class="nav-btn right" onclick="moveSlide('videos', 1)">&#10095;</button>
+  <section id="videos">
+    <h2>Video Editing Projects</h2>
+    <div class="video-slider">
+      <iframe src="https://www.youtube.com/embed/aWs5PvKXcT8" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/r_qilUOyLQE" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/EnO29KaWl08" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
-  <section id="contact" class="contact fade">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Let’s collaborate and bring your ideas to life.</p>
-    <a href="mailto:yourname@email.com">✉️ Email</a>
-    <a href="https://linkedin.com/in/yourname" target="_blank">💼 LinkedIn</a>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+    <p>Instagram: <a href="#">instagram.com/yourprofile</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Pankaj Kumar | Designed with creativity & passion ✨</p>
+    <p>© 2025 Pankaj Kumar. Designed with passion & creativity.</p>
   </footer>
 
-  <script>
-    let indices = { graphics: 0, videos: 0 };
-
-    function moveSlide(type, n) {
-      const slider = document.querySelector(`#${type}-slider .slides`);
-      const slides = slider.children.length;
-      indices[type] = (indices[type] + n + slides) % slides;
-      slider.style.transform = `translateX(-${indices[type] * 100}%)`;
-    }
-
-    // Scroll Animation
-    const faders = document.querySelectorAll('.fade');
-    window.addEventListener('scroll', () => {
-      faders.forEach(el => {
-        const rect = el.getBoundingClientRect().top;
-        if (rect < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
+
