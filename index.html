@@ -11,54 +11,25 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: #0d0d0d;
+      background: #0d0d0d;
       color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      height: 100vh;
-      background: linear-gradient(135deg, #111, #1a1a1a);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #00bcd4;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #ccc;
-      margin-top: 10px;
-    }
-
-    header p {
-      margin-top: 20px;
-      max-width: 600px;
-      font-size: 1rem;
-      color: #aaa;
+      overflow-x: hidden;
     }
 
     nav {
-      background: rgba(20, 20, 20, 0.9);
       position: sticky;
       top: 0;
-      z-index: 999;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
       display: flex;
       justify-content: center;
       gap: 40px;
       padding: 15px 0;
+      z-index: 999;
     }
 
     nav a {
@@ -72,80 +43,114 @@
       color: #00bcd4;
     }
 
-    section {
-      padding: 80px 10%;
-    }
-
-    .about {
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      padding: 20px;
     }
 
-    .about h2 {
-      font-size: 2.2rem;
+    header h1 {
+      font-size: 3rem;
       color: #00bcd4;
-      margin-bottom: 20px;
+      font-weight: 700;
     }
 
-    .about p {
-      max-width: 700px;
-      margin: 0 auto;
+    header h2 {
+      font-size: 1.5rem;
       color: #ccc;
+      margin-top: 10px;
     }
 
-    .portfolio {
-      background: #121212;
+    header p {
+      margin-top: 20px;
+      color: #aaa;
+      max-width: 650px;
+      line-height: 1.6;
     }
 
-    .portfolio h2 {
+    section {
+      padding: 80px 8%;
+    }
+
+    h2.section-title {
       text-align: center;
       font-size: 2.2rem;
       color: #00bcd4;
       margin-bottom: 40px;
+      position: relative;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .about p {
+      text-align: center;
+      color: #ccc;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    .project {
-      background: #1b1b1b;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(0, 188, 212, 0.2);
-    }
-
-    .project img {
+    /* Slider */
+    .slider {
+      position: relative;
       width: 100%;
-      height: 200px;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      transition: opacity 1s ease;
+    }
+
+    .slide img, .slide iframe {
+      width: 100%;
+      height: 500px;
       object-fit: cover;
+      border: none;
     }
 
-    .project-content {
-      padding: 20px;
+    .navigation {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 15px;
     }
 
-    .project-content h3 {
-      color: #fff;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+    .nav-btn {
+      background: rgba(0, 0, 0, 0.6);
+      color: #00bcd4;
+      border: none;
+      font-size: 24px;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
     }
 
-    .project-content p {
-      color: #aaa;
-      font-size: 0.95rem;
+    .nav-btn:hover {
+      background: #00bcd4;
+      color: #000;
     }
 
     footer {
-      background: #0a0a0a;
       text-align: center;
-      padding: 30px 20px;
+      background: #0a0a0a;
+      padding: 40px 20px;
       color: #888;
     }
 
@@ -153,26 +158,29 @@
       text-align: center;
     }
 
-    .contact h2 {
-      font-size: 2rem;
-      color: #00bcd4;
-      margin-bottom: 20px;
-    }
-
     .contact a {
       display: inline-block;
       margin: 10px;
+      padding: 10px 25px;
+      border-radius: 30px;
+      border: 1px solid #00bcd4;
       color: #00bcd4;
       text-decoration: none;
-      border: 1px solid #00bcd4;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: all 0.3s;
+      transition: 0.3s;
     }
 
     .contact a:hover {
       background: #00bcd4;
-      color: #111;
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    section, header {
+      animation: fadeIn 1.2s ease;
     }
   </style>
 </head>
@@ -180,7 +188,8 @@
 
   <nav>
     <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#graphics">Graphic Design</a>
+    <a href="#videos">Video Editing</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -191,33 +200,43 @@
   </header>
 
   <section id="about" class="about">
-    <h2>About Me</h2>
+    <h2 class="section-title">About Me</h2>
     <p>I'm a creative designer and editor with hands-on experience in design and video editing. My work blends artistry and technical skill to deliver eye-catching visuals and engaging video content. I love experimenting with color, motion, and layout to make every project unique and expressive.</p>
   </section>
 
-  <section id="portfolio" class="portfolio">
-    <h2>My Work</h2>
-    <div class="project-grid">
-      <div class="project">
-        <img src="https://via.placeholder.com/400x200?text=Graphic+Design+Project" alt="Graphic Design Project">
-        <div class="project-content">
-          <h3>Graphic Design Project</h3>
-          <p>Creative poster and social media design showcasing color, typography, and branding skills.</p>
-        </div>
+  <section id="graphics">
+    <h2 class="section-title">Graphic Design Projects</h2>
+    <div class="slider" id="graphics-slider">
+      <div class="slides">
+        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=1O1tCCeBwlvgmKhlE30w63zhVbflnuU2u" alt="Graphic Design 1"></div>
+        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=14YCxwjnJHBG4f1_lxFtQ84wFDCBftknG" alt="Graphic Design 2"></div>
+        <div class="slide"><img src="https://drive.google.com/uc?export=preview&id=1rdjbuJtJ8tBos3u55Pqx7VVX8cFdPBJI" alt="Graphic Design 3"></div>
       </div>
-      <div class="project">
-        <img src="https://via.placeholder.com/400x200?text=Video+Editing+Project" alt="Video Editing Project">
-        <div class="project-content">
-          <h3>Video Editing Project</h3>
-          <p>A dynamic edit featuring cinematic cuts, transitions, and motion graphics to tell a story visually.</p>
-        </div>
+      <div class="navigation">
+        <button class="nav-btn" onclick="moveSlide('graphics', -1)">&#10094;</button>
+        <button class="nav-btn" onclick="moveSlide('graphics', 1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <h2 class="section-title">Video Editing Projects</h2>
+    <div class="slider" id="videos-slider">
+      <div class="slides">
+        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1ss6ZYokfFVuTHTWxvy-A2986SZgW01ah"></iframe></div>
+        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1mQBSySsI4DruTQDIJXoLKO0si3ARbk8s"></iframe></div>
+        <div class="slide"><iframe src="https://drive.google.com/uc?export=preview&id=1a3krMVb4d1fSkps2MUycEfLuu1Jj4Kyt"></iframe></div>
+      </div>
+      <div class="navigation">
+        <button class="nav-btn" onclick="moveSlide('videos', -1)">&#10094;</button>
+        <button class="nav-btn" onclick="moveSlide('videos', 1)">&#10095;</button>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Let's create something amazing together.</p>
+    <h2 class="section-title">Contact Me</h2>
+    <p>Let’s create something amazing together.</p>
     <a href="mailto:yourname@email.com">✉️ Email Me</a>
     <a href="https://linkedin.com/in/yourname" target="_blank">💼 LinkedIn</a>
   </section>
@@ -226,5 +245,16 @@
     <p>© 2025 Pankaj Kumar. All rights reserved.</p>
   </footer>
 
+  <script>
+    let indices = { graphics: 0, videos: 0 };
+
+    function moveSlide(type, n) {
+      const slider = document.querySelector(`#${type}-slider .slides`);
+      const slides = slider.children.length;
+      indices[type] = (indices[type] + n + slides) % slides;
+      slider.style.transform = `translateX(-${indices[type] * 100}%)`;
+    }
+  </script>
 </body>
 </html>
+
