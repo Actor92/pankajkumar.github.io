@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pankaj Kumar | Graphic Designer & Video Editor</title>
+  <meta name="description"
+    content="Pankaj Kumar — Graphic Designer & Video Editor portfolio showcasing graphics and video projects.">
+  <meta property="og:title" content="Pankaj Kumar | Graphic Designer & Video Editor">
+  <meta property="og:description" content="Portfolio of graphics and video editing projects.">
+  <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -24,12 +34,14 @@
       top: 0;
       backdrop-filter: blur(10px);
       z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     header h1 {
       color: #00e5ff;
       font-size: 1.8rem;
       letter-spacing: 1px;
+      margin: 0;
     }
 
     nav a {
@@ -43,9 +55,23 @@
       color: #00e5ff;
     }
 
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     section {
       padding: 5rem 2rem;
       text-align: center;
+      animation: fadeInUp 1.2s ease;
+      scroll-margin-top: 90px;
     }
 
     h2 {
@@ -53,6 +79,14 @@
       font-size: 2.5rem;
       margin-bottom: 2rem;
       text-shadow: 0 0 10px #00e5ff;
+    }
+
+    /* --- About --- */
+    #about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.2rem;
+      color: #aaa;
     }
 
     /* --- Graphics Section --- */
@@ -63,21 +97,44 @@
       gap: 2rem;
       justify-content: center;
       padding: 1rem;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .graphics-slider img {
-      flex: 0 0 80%;
-      max-width: 1200px;
-      height: auto;
-      border-radius: 20px;
+    .graphics-slider::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .graphics-slider::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    .graphics-slider::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #00e5ff, #00bcd4);
+      border-radius: 10px;
+    }
+
+    .graphics-card {
+      flex: 0 0 min(90vw, 400px);
       scroll-snap-align: center;
-      box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-      transition: transform 0.4s ease;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+      padding: 14px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .graphics-slider img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 35px rgba(0, 229, 255, 0.6);
+    .graphics-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(0, 229, 255, 0.35);
+    }
+
+    .graphics-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      background: #0a0a0a;
     }
 
     /* --- Video Section --- */
@@ -93,11 +150,13 @@
       height: 680px;
       border-radius: 20px;
       box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: none;
+      background: #000;
     }
 
     .video-slider iframe:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 0 35px rgba(0, 229, 255, 0.6);
     }
 
@@ -106,6 +165,7 @@
       text-align: center;
       padding: 2rem;
       color: #ccc;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     footer a {
@@ -113,16 +173,35 @@
       text-decoration: none;
     }
 
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    /* --- Responsive --- */
+    @media (max-width: 1024px) {
+      .video-slider iframe {
+        width: 320px;
+        height: 570px;
+      }
     }
 
-    section {
-      animation: fadeInUp 1.2s ease;
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .graphics-card {
+        flex-basis: 95vw;
+      }
+
+      .video-slider iframe {
+        width: 100%;
+        height: 60vh;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -136,8 +215,9 @@
 
   <section id="about">
     <h2>Graphic Designer & Video Editor</h2>
-    <p style="max-width:800px;margin:auto;font-size:1.2rem;color:#aaa;">
-      I’m a creative designer and editor with experience in crafting visually striking designs and compelling video edits. 
+    <p>
+      I’m a creative designer and editor with experience in crafting visually striking designs and compelling video
+      edits.
       I bring ideas to life through impactful visuals that connect with audiences.
     </p>
   </section>
@@ -145,26 +225,55 @@
   <section id="graphics">
     <h2>Graphic Design Projects</h2>
     <div class="graphics-slider">
-      <img src="https://live.staticflickr.com/65535/54188962810_987bc9630c_b.jpg" alt="Graphic 1">
-      <img src="https://live.staticflickr.com/65535/54189075913_85a16f49b5_b.jpg" alt="Graphic 2">
-      <img src="https://live.staticflickr.com/65535/54189075623_8d1d043787_b.jpg" alt="Graphic 3">
+      <div class="graphics-card">
+        <img src="<a data-flickr-embed=" true" data-context="true"
+          href="https://www.flickr.com/photos/203644872@N03/54838292622/in/dateposted-public/" title="ppppp (1)"><img
+          src="https://live.staticflickr.com/65535/54838292622_d3627bf4ec_c.jpg" width="640" height="800"
+          alt="ppppp (1)" /></a>
+        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>" alt="Graphic 1"
+        loading="lazy">
+      </div>
+      <div class="graphics-card">
+        <img src="<a data-flickr-embed=" true" data-context="true"
+          href="https://www.flickr.com/photos/203644872@N03/54839382419/in/dateposted-public/"
+          title="polo shirt 1.1"><img src="https://live.staticflickr.com/65535/54839382419_221bf052e3_c.jpg" width="800"
+          height="800" alt="polo shirt 1.1" /></a>
+        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>" alt="Graphic 2"
+        loading="lazy">
+      </div>
+      <div class="graphics-card">
+        <img src="<a data-flickr-embed=" true" data-context="true"
+          href="https://www.flickr.com/photos/203644872@N03/54839404008/in/dateposted-public/"
+          title="ads or thing01"><img src="https://live.staticflickr.com/65535/54839404008_8335b83b4a_c.jpg" width="736"
+          height="736" alt="ads or thing01" /></a>
+        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>" alt="Graphic 3"
+        loading="lazy">
+      </div>
     </div>
   </section>
 
   <section id="videos">
     <h2>Video Editing Projects</h2>
     <div class="video-slider">
-      <iframe src="https://www.youtube.com/embed/aWs5PvKXcT8" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/r_qilUOyLQE" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/EnO29KaWl08" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/aWs5PvKXcT8" title="Project video 1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/r_qilUOyLQE" title="Project video 2"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/EnO29KaWl08" title="Project video 3"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
-    <p>Instagram: <a href="#">instagram.com/yourprofile</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank"
+        rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
+    <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank"
+        rel="noopener noreferrer">instagram.com/yourprofile</a></p>
   </section>
 
   <footer>
@@ -172,5 +281,6 @@
   </footer>
 
 </body>
+
 </html>
 
